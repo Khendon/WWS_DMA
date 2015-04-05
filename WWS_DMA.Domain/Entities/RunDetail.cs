@@ -7,9 +7,27 @@ namespace WWS_DMA.Domain.Entities
 {
     public class RunDetail
     {
+        // Fields
+        [Key()]
         public int RunID { get; set; }
+
+        [Display(Name="Run No.")]
+        [Range(0, 255)]
         public int RunNum { get; set; }
+
+        [Display(Name="RIH Date")]
         public DateTime RihDate { get; set; }
+
+        [Display(Name="Sensor Depth")]
+        [Range(0, 30000)]
         public int SensorDepth { get; set; }
+
+        // Foreign Keys
+        public int ModelID { get; set; }
+
+        // Navigation Properties
+        public virtual Modelling Modelling { get; set; }
+        public virtual ICollection<GaugeData> GaugeData { get; set; }
+        public virtual ICollection<GaugeDetail> Gauges { get; set; }
     }
 }

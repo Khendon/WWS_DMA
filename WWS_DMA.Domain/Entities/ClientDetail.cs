@@ -6,13 +6,17 @@ namespace WWS_DMA.Domain.Entities
 {
     public class ClientDetail
     {
-        [Key]
+        // Fields
+        [Key()]
         public int ClientID { get; set; }
 
-        [MaxLength(20), MinLength(2)]
+        [Required()]
+        [StringLength(30, MinimumLength=1)]
+        [Display(Name="Client")]
         public string Name { get; set; }
 
-        [MaxLength(30), MinLength(2)]
+        [Required()]
+        [StringLength(30, MinimumLength=1)]
         public string Country { get; set; }
     }
 }
