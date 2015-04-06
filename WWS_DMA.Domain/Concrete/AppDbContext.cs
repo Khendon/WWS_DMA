@@ -4,7 +4,7 @@ using WWS_DMA.Domain.Entities;
 
 namespace WWS_DMA.Domain.Concrete
 {
-    public class Entities : DbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<JobDetail> JobDetails { get; set; }
         public DbSet<ClientDetail> ClientDetails { get; set; }

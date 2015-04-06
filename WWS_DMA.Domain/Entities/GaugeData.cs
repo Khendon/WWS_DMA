@@ -22,5 +22,12 @@ namespace WWS_DMA.Domain.Entities
         public decimal Temperature { get; set; }
 
         public bool IsSro { get; set; }
+
+        // Foreign Keys
+        public int RunID { get; set; }
+
+        // Navigation Properties
+        public virtual RunDetail RunDetail { get; set; }
+
     }
 }

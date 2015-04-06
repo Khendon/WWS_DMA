@@ -19,15 +19,13 @@ namespace WWS_DMA.Domain.Entities
         [StringLength(20, MinimumLength=3)]
         public string ProdStream { get; set; }
 
-        [Display(Name="Total Runs")]
-        [Range(0, 255)]
-        public int RunsComplete { get; set; }
-        
-        [Range(0, 255)]
-        public int MaxTempExp { get; set; }
-
-        public long TimeInHole { get; set; }
-
+        [Display(Name="Manufacture Date")]
         public DateTime ManufactureDate { get; set; }
+
+        // Foreign Keys
+        public int RunID { get; set; }
+
+        // Navigation Properties
+        public virtual RunDetail RunDetail { get; set; }
     }
 }

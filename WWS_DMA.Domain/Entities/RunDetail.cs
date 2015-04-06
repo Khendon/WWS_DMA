@@ -23,10 +23,11 @@ namespace WWS_DMA.Domain.Entities
         public int SensorDepth { get; set; }
 
         // Foreign Keys
-        public int ModelID { get; set; }
+        public int JobID { get; set; }
 
         // Navigation Properties
-        public virtual Modelling Modelling { get; set; }
+        public virtual JobDetail JobDetail { get; set; }
+        public virtual Modelling ModelData { get; set; }
         public virtual ICollection<GaugeData> GaugeData { get; set; }
         public virtual ICollection<GaugeDetail> Gauges { get; set; }
     }
