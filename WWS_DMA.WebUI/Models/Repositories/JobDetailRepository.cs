@@ -9,7 +9,12 @@ namespace WWS_DMA.WebUI.Models.Repositories
 {
     public class JobDetailRepository : IJobDetailRepository, IDisposable
     {
-        private AppDbContext DbContext;
+        private AppDbContext DbContext = null;
+
+        public JobDetailRepository()
+        {
+            this.DbContext = new AppDbContext();
+        }
 
         public JobDetailRepository(AppDbContext dbContext)
         {
