@@ -33,7 +33,7 @@ namespace WWS_DMA.WebUI.Controllers
             return View(jobs);
         }
 
-        public ViewResult New()
+        public ActionResult New()
         {
             List<SelectListItem> clientNames = new List<SelectListItem>();
 
@@ -82,7 +82,8 @@ namespace WWS_DMA.WebUI.Controllers
             return View();
         }
 
-        public ActionResult Create([Bind(Include = "JobNumber, ClientID, FieldName, WellName, Product, InstallDate, NumRuns")]JobDetail jobDetail)
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult New([Bind(Include = "JobNumber, ClientID, FieldName, WellName, Product, InstallDate, NumRuns")]JobDetail jobDetail)
         {
             try
             {
