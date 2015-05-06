@@ -44,5 +44,6 @@ namespace WWS_DMA.Domain.Entities
         [Display(Name="Client")]
         public virtual ClientDetail ClientDetail { get; set; }
         public virtual ICollection<RunDetail> RunDetails { get; set; }
+
     }
 }

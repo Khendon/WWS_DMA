@@ -21,6 +21,11 @@ namespace WWS_DMA.WebUI.Models.Repositories
             this.DbContext = dbContext;
         }
 
+        public IEnumerable<ClientDetail> GetClientDetails()
+        {
+            return DbContext.ClientDetails;
+        }
+
         public IEnumerable<JobDetail> GetJobDetails()
         {
             return DbContext.JobDetails;

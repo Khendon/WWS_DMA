@@ -8,6 +8,7 @@ namespace WWS_DMA.WebUI.Models.Interfaces
     public interface IJobDetailRepository : IDisposable
     {
         IEnumerable<JobDetail> GetJobDetails();
+        IEnumerable<ClientDetail> GetClientDetails();
         JobDetail GetJobDetailByID(int JobID);
         void InsertJobDetail(JobDetail JobDetail);
         void DeleteJobDetail(int JobID);
